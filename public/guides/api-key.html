@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AIWriter 零基础教程：如何获取 DeepSeek API Key" />
+    <title>API Key 获取教程 · AIWriter</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f5f7;
+        --card: #fff;
+        --text: #1d1d1f;
+        --muted: #6e6e73;
+        --accent: #0071e3;
+        --warn-bg: #fff8e6;
+        --warn-text: #8a5a00;
+        --ok-bg: #eefbf1;
+        --ok-text: #0b6b2d;
+        --line: rgba(60, 60, 67, 0.14);
+        --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC',
+          'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font);
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        width: min(720px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2rem 0 3.5rem;
+      }
+      .back {
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+        letter-spacing: -0.03em;
+        line-height: 1.2;
+      }
+      .lead {
+        margin: 0 0 1.5rem;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1.15rem 1.25rem 1.25rem;
+        margin: 0 0 1rem;
+      }
+      .card h2 {
+        margin: 0 0 0.65rem;
+        font-size: 1.2rem;
+      }
+      .card ol,
+      .card ul {
+        margin: 0.35rem 0 0;
+        padding-left: 1.25rem;
+      }
+      .card li {
+        margin: 0.45rem 0;
+      }
+      .tip {
+        background: var(--warn-bg);
+        color: var(--warn-text);
+        border-radius: 10px;
+        padding: 0.85rem 1rem;
+        margin: 0.85rem 0 0;
+        font-size: 0.95rem;
+      }
+      .ok {
+        background: var(--ok-bg);
+        color: var(--ok-text);
+      }
+      a {
+        color: var(--accent);
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.9em;
+        background: rgba(120, 120, 128, 0.12);
+        padding: 0.1em 0.35em;
+        border-radius: 6px;
+      }
+      .step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-right: 0.4rem;
+        vertical-align: -0.1rem;
+      }
+      footer {
+        margin-top: 1.5rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <a class="back" href="/">← 返回 AIWriter</a>
+      <h1>怎么拿到 API Key？</h1>
+      <p class="lead">
+        这份教程写给<strong>完全不了解计算机</strong>的朋友。请按顺序一步步做。推荐使用
+        <strong>DeepSeek（深度求索）</strong>——本软件默认就是它，价格相对友好，步骤也简单。
+      </p>
+
+      <section class="card">
+        <h2>先弄懂三个词（30 秒）</h2>
+        <ul>
+          <li>
+            <strong>API Key</strong>：可以理解成一把「私人钥匙」。软件用它向 DeepSeek
+            请求写小说。钥匙是保密的，不要发给陌生人，也不要发到微信群、朋友圈。
+          </li>
+          <li>
+            <strong>充值 / 余额</strong>：用 AI
+            写字一般要花一点点钱（通常几毛到几块钱就能试很多次）。没钱时钥匙也能创建，但写不出来。
+          </li>
+          <li>
+            <strong>粘贴</strong>：复制文字后，在输入框里点一下，再按
+            <code>Ctrl + V</code>（苹果电脑是 <code>Command + V</code>）。
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2><span class="step-num">1</span>打开 DeepSeek 开放平台</h2>
+        <ol>
+          <li>用电脑打开浏览器（Chrome、Edge、Safari 都可以）。</li>
+          <li>
+            在地址栏输入下面网址，然后按回车：<br />
+            <a href="https://platform.deepseek.com/" target="_blank" rel="noopener"
+              >https://platform.deepseek.com/</a
+            >
+          </li>
+          <li>如果网页是英文，先不用慌，后面有中文按钮的地方照着点即可。</li>
+        </ol>
+        <p class="tip">
+          如果打不开：检查网络，或换一个浏览器再试。公司/学校网络有时会拦截，可换手机热点试试。
+        </p>
+      </section>
+
+      <section class="card">
+        <h2><span class="step-num">2</span>注册或登录账号</h2>
+        <ol>
+          <li>在页面上找到 <strong>Sign up / 注册</strong> 或 <strong>Log in / 登录</strong>。</li>
+          <li>按提示用手机号或邮箱完成验证（会收到验证码短信/邮件）。</li>
+          <li>设置一个密码，并记在安全的地方（不要用生日这种太简单的）。</li>
+          <li>登录成功后，你会进入「控制台 / Dashboard」一类的管理页面。</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2><span class="step-num">3</span>进入 API Key 页面并创建钥匙</h2>
+        <ol>
+          <li>
+            登录后，在左侧或顶部菜单里找到类似这些字样的入口之一：
+            <strong>API Keys</strong>、<strong>API 密钥</strong>、<strong>密钥管理</strong>。
+          </li>
+          <li>也可以直接打开：
+            <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener"
+              >https://platform.deepseek.com/api_keys</a
+            >
+          </li>
+          <li>点击 <strong>Create API Key / 创建 API Key / 创建新密钥</strong>。</li>
+          <li>给这把钥匙起个名字，例如：<code>aiwriter</code>（随便起，方便你自己认出就行）。</li>
+          <li>创建成功后，网页会显示一长串以 <code>sk-</code> 开头的字符——那就是 API Key。</li>
+        </ol>
+        <p class="tip">
+          <strong>非常重要：</strong>完整钥匙往往只显示一次。请立刻复制保存到备忘录或记事本。关掉页面后，可能再也看不到完整内容，只能删掉重建。
+        </p>
+      </section>
+
+      <section class="card">
+        <h2><span class="step-num">4</span>给账户充一点钱（才能真正写小说）</h2>
+        <ol>
+          <li>在平台里找到 <strong>Billing / 充值 / 余额 / Top up</strong> 等入口。</li>
+          <li>按提示充值（金额按页面说明；新手一般先充少量试用不影响）。</li>
+          <li>充值成功后，余额里应能看到金额。</li>
+        </ol>
+        <p class="tip">
+          若未充值：创建了 Key 也可能「连得上但写不出」或提示额度不足。这是正常现象，不是软件坏了。
+        </p>
+      </section>
+
+      <section class="card">
+        <h2><span class="step-num">5</span>把钥匙填进 AIWriter</h2>
+        <ol>
+          <li>打开 AIWriter 网站，点顶部的 <strong>设置</strong>。</li>
+          <li>
+            「服务商预设」请选择 <strong>DeepSeek（默认）</strong>。<br />
+            （一般已经选好了，不用改。）
+          </li>
+          <li>
+            「API URI」一般会自动变成：<br />
+            <code>https://api.deepseek.com/v1</code><br />
+            请不要随便改。
+          </li>
+          <li>
+            「模型名称」推荐保持：<br />
+            <code>deepseek-v4-flash</code>
+          </li>
+          <li>在 <strong>API Key</strong> 输入框里，粘贴你刚才复制的那串 <code>sk-...</code>。</li>
+          <li>回到顶部点 <strong>写作</strong>，在右侧写一点要求，再点 <strong>开始写作</strong>。</li>
+        </ol>
+        <p class="tip ok">
+          如果正文开始一个字一个字往外蹦，就说明成功了。恭喜！
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>常见问题</h2>
+        <ul>
+          <li>
+            <strong>提示鉴权失败 / 401？</strong><br />
+            Key 复制少了字符、多了空格，或 Key 已被删除。重新创建一把再粘贴。
+          </li>
+          <li>
+            <strong>提示额度不足 / 429？</strong><br />
+            余额不够或请求太频繁。去平台充值，稍后再试。
+          </li>
+          <li>
+            <strong>提示网络或 CORS？</strong><br />
+            这是浏览器安全限制。可换网络、稍后再试；若仍不行，需要懂技术的朋友帮你配置「允许跨域的网关」（这超出零基础范围，可找人协助）。
+          </li>
+          <li>
+            <strong>钥匙泄露了怎么办？</strong><br />
+            立刻回 API Keys 页面删除旧钥匙，再新建一把，并更新 AIWriter 设置里的 Key。
+          </li>
+          <li>
+            <strong>想用别的厂家（OpenAI、通义、硅基流动）？</strong><br />
+            流程类似：去对应官网注册 → 找到 API Key 页面 → 创建 → 充值 → 在 AIWriter
+            设置里换「服务商预设」并粘贴 Key。默认仍建议先用 DeepSeek 练熟。
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>安全提醒（请务必阅读）</h2>
+        <ul>
+          <li>API Key 等于花钱权限，不要截图发群、不要交给陌生人「帮你调试」。</li>
+          <li>AIWriter 把 Key 存在你自己的浏览器里，不会发到本软件自己的服务器。</li>
+          <li>用完公共电脑，请到设置里点「清除密钥」或「清除本机全部数据」。</li>
+        </ul>
+      </section>
+
+      <footer>
+        AIWriter · 使用 Cursor 制作 · 教程以 DeepSeek 开放平台页面为准，若官网改版请对照最新按钮文字。
+      </footer>
+    </div>
+  </body>
+</html>

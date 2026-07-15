@@ -405,6 +405,9 @@ export function WriteView({
             <button type="button" className="text-link" onClick={onNavigateSettings}>
               前往设置
             </button>
+            <a className="text-link" href="/guides/api-key.html" target="_blank" rel="noopener">
+              查看 Key 教程
+            </a>
           </div>
         ) : null}
 

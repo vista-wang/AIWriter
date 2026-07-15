@@ -37,7 +37,13 @@ export function SettingsView({
     <div className="page settings-page">
       <header className="page-header">
         <h1>设置</h1>
-        <p>配置 OpenAI 兼容 API。密钥与数据仅保存在本机浏览器，不会上传到本应用服务器。</p>
+        <p>
+          配置 API。密钥只保存在本机浏览器。不会用？请先阅读
+          <a className="text-link" href="/guides/api-key.html" target="_blank" rel="noopener">
+            零基础 API Key 获取教程（推荐 DeepSeek）
+          </a>
+          。
+        </p>
       </header>
 
       {storageWarning ? (
@@ -97,6 +103,9 @@ export function SettingsView({
                 清除密钥
               </button>
             </div>
+            <a className="field-help-link" href="/guides/api-key.html" target="_blank" rel="noopener">
+              不会获取 API Key？打开图文教程
+            </a>
           </label>
 
           {models.length > 0 ? (
@@ -127,7 +136,7 @@ export function SettingsView({
               autoComplete="off"
               spellCheck={false}
               list={models.length ? 'provider-model-list' : undefined}
-              placeholder="例如 gpt-4.1-mini"
+              placeholder="例如 deepseek-v4-flash"
               value={config.model}
               onChange={(e) => update({ model: e.target.value })}
             />

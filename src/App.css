@@ -444,9 +444,21 @@ textarea {
   align-items: center;
 }
 
-.field-error {
-  font-size: 0.75rem;
-  color: var(--danger-text);
+.field-help-link {
+  margin-top: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.field-help-link:hover {
+  text-decoration: underline;
+}
+
+.page-header .text-link {
+  font: inherit;
+  font-weight: 650;
 }
 
 .field-stack {

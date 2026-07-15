@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import defaultSystemPrompt from '../../prompts/novel-writer.system.md?raw'
-import { PROVIDER_PRESETS } from '../config/providers'
+import { DEFAULT_PROVIDER_ID, PROVIDER_PRESETS } from '../config/providers'
 import {
   asBoolean,
   asString,
@@ -27,7 +27,8 @@ export type AppConfig = {
   systemPrompt: string
 }
 
-const defaultPreset = PROVIDER_PRESETS[0]
+const defaultPreset =
+  PROVIDER_PRESETS.find((p) => p.id === DEFAULT_PROVIDER_ID) ?? PROVIDER_PRESETS[0]
 
 export const DEFAULT_SYSTEM_PROMPT = defaultSystemPrompt.trim()
 

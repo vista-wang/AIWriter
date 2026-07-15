@@ -25,6 +25,15 @@ npm run preview
    - `VITE_SUPABASE_URL`
    - `VITE_SUPABASE_ANON_KEY`（publishable / anon，切勿使用 service_role）
 
+## 第一次使用（零基础）
+
+默认服务商为 **DeepSeek**。请按教程获取 API Key 后再写作：
+
+- 网页教程（部署后可打开）：[`/guides/api-key.html`](./public/guides/api-key.html)
+- 直接打开文件：[`public/guides/api-key.html`](./public/guides/api-key.html)
+
+简要步骤：注册 [DeepSeek 开放平台](https://platform.deepseek.com/) → 创建 API Key → 充值 → 在 AIWriter「设置」粘贴 Key。
+
 ## 功能概览
 
 - **写作**：左栏正文，右栏设定；可选思维链
@@ -43,8 +52,8 @@ npm run preview
 
 | 预设 | Base URL |
 |------|----------|
+| DeepSeek（默认） | `https://api.deepseek.com/v1` |
 | OpenAI | `https://api.openai.com/v1` |
-| DeepSeek | `https://api.deepseek.com/v1` |
 | 通义（兼容模式） | `https://dashscope.aliyuncs.com/compatible-mode/v1` |
 | SiliconFlow | `https://api.siliconflow.cn/v1` |
 | 自定义 | 自行填写 |

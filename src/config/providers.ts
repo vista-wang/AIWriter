@@ -14,9 +14,21 @@ export type ProviderPreset = {
 
 /**
  * Model catalogs curated from public provider docs (2026).
- * Providers may add/remove models; users can still type a custom id.
+ * DeepSeek is first — the default provider for new users.
  */
 export const PROVIDER_PRESETS: ProviderPreset[] = [
+  {
+    id: 'deepseek',
+    label: 'DeepSeek（默认）',
+    baseUrl: 'https://api.deepseek.com/v1',
+    defaultModel: 'deepseek-v4-flash',
+    models: [
+      { id: 'deepseek-v4-flash', label: 'DeepSeek V4 Flash（推荐）' },
+      { id: 'deepseek-v4-pro', label: 'DeepSeek V4 Pro' },
+      { id: 'deepseek-chat', label: 'deepseek-chat（旧别名）' },
+      { id: 'deepseek-reasoner', label: 'deepseek-reasoner（旧别名）' },
+    ],
+  },
   {
     id: 'openai',
     label: 'OpenAI',
@@ -33,18 +45,6 @@ export const PROVIDER_PRESETS: ProviderPreset[] = [
       { id: 'gpt-4o-mini', label: 'GPT-4o mini' },
       { id: 'o3', label: 'o3' },
       { id: 'o4-mini', label: 'o4-mini' },
-    ],
-  },
-  {
-    id: 'deepseek',
-    label: 'DeepSeek',
-    baseUrl: 'https://api.deepseek.com/v1',
-    defaultModel: 'deepseek-v4-flash',
-    models: [
-      { id: 'deepseek-v4-pro', label: 'DeepSeek V4 Pro' },
-      { id: 'deepseek-v4-flash', label: 'DeepSeek V4 Flash' },
-      { id: 'deepseek-chat', label: 'deepseek-chat（旧别名）' },
-      { id: 'deepseek-reasoner', label: 'deepseek-reasoner（旧别名）' },
     ],
   },
   {
@@ -110,6 +110,9 @@ export const LENGTH_OPTIONS: LengthOption[] = [
 export function getProviderModels(providerId: string): ProviderModel[] {
   return PROVIDER_PRESETS.find((p) => p.id === providerId)?.models ?? []
 }
+
+/** Default provider for first-time users */
+export const DEFAULT_PROVIDER_ID = 'deepseek'
 
 /** Made with Cursor — product attribution constant */
 export const CURSOR_CREDIT = '使用 Cursor 制作'
