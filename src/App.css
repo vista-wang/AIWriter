@@ -143,6 +143,88 @@ textarea {
   color: var(--text-secondary);
 }
 
+/* Partner promo — under toolbar (high-visibility rail) */
+.promo-strip {
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--separator);
+  background: linear-gradient(90deg, rgba(0, 113, 227, 0.08), rgba(0, 113, 227, 0.02));
+}
+
+.promo-strip-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  width: min(100% - 1.5rem, 1100px);
+  margin: 0 auto;
+  padding: 0.55rem 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.promo-strip-brand {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.promo-strip-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.promo-strip-text strong {
+  font-size: 0.875rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.promo-strip-sub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.promo-strip-cta {
+  font-size: 0.8125rem;
+  font-weight: 650;
+  color: var(--accent-text);
+  background: var(--accent);
+  border-radius: 980px;
+  padding: 0.35rem 0.85rem;
+  white-space: nowrap;
+}
+
+.promo-strip-link:hover .promo-strip-cta {
+  background: var(--accent-pressed);
+}
+
+.promo-strip-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .promo-strip-link {
+    grid-template-columns: minmax(0, 1fr) auto;
+    width: min(100% - 1rem, 1100px);
+  }
+
+  .promo-strip-brand {
+    grid-column: 1 / -1;
+  }
+
+  .promo-strip-sub {
+    display: none;
+  }
+}
+
 .shell-main {
   flex: 1;
   min-height: 0;

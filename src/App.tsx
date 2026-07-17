@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { PromoBanner } from './components/PromoBanner'
 import { CURSOR_CREDIT } from './config/providers'
 import { useHistory, type HistoryEntry } from './hooks/useHistory'
 import { useLocalConfig } from './hooks/useLocalConfig'
@@ -98,6 +99,8 @@ export default function App() {
           <span className="toolbar-model">{config.model || '未配置模型'}</span>
         </div>
       </header>
+
+      <PromoBanner />
 
       <main className="shell-main">
         {view === 'write' ? (
